@@ -1,0 +1,268 @@
+ /* ------------------------------
+   RESET + VARIABLES
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --beige: #f5f1e8;
+  --light-brown: #a67c52;
+  --pink: #e8b4bc;
+  --dark-brown: #6b5547;
+  --white: #ffffff;
+}
+
+/* ------------------------------
+   BASE STYLES
+--------------------------------*/
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--beige);
+  color: var(--dark-brown);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------
+   HERO SECTION
+--------------------------------*/
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(rgba(107, 85, 71, 0.5), rgba(107, 85, 71, 0.7)), 
+              url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.95;
+}
+
+/* ------------------------------
+   BUTTONS
+--------------------------------*/
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--pink);
+  color: var(--dark-brown);
+  box-shadow: 0 4px 12px rgba(232, 180, 188, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(232, 180, 188, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--dark-brown);
+  transform: translateY(-4px);
+}
+
+/* ------------------------------
+   SECTIONS
+--------------------------------*/
+section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--dark-brown);
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background-color: var(--pink);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+/* ------------------------------
+   ABOUT SECTION
+--------------------------------*/
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #8b7461;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 25px rgba(166, 124, 82, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(232, 180, 188, 0.25);
+}
+
+.feature-card h3 {
+  color: var(--light-brown);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ------------------------------
+   PRODUCTS SECTION
+--------------------------------*/
+.products {
+  background: linear-gradient(to bottom, var(--beige), rgba(245, 241, 232, 0.8));
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(166, 124, 82, 0.1);
+  transition: all 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(232, 180, 188, 0.25);
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+.product-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-content h3 {
+  color: var(--light-brown);
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-content h3 {
+  color: var(--pink);
+}
+
+/* ------------------------------
+   CONTACT SECTION
+--------------------------------*/
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 25px rgba(166, 124, 82, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(232, 180, 188, 0.25);
+}
+
+.contact-icon {
+  width: 65px;
+  height: 65px;
+  background-color: rgba(232, 180, 188, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+footer {
+  background-color: rgba(107, 85, 71, 0.05);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(166, 124, 82, 0.2);
+  color: #8b7461;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
